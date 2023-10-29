@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button color="dark" slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-button>
+    <ion-title>{{lista.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="background-color: rgb(231, 245, 240);">
+    <ion-row>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          <img src="{{lista.imageURL}}" style="height: auto; max-width: 40vh;">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{lista.nombre}}</h1>
+      </ion-col>
+    </ion-row>
+    <p style="text-align: center; font-style: italic;">
+      {{lista.descripcion}}
+    </p>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let comment of lista.comment">
+            {{comment}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          <img src="{{lista.imagen_tenedores}}" style="height: auto; max-width: 10vh;">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
